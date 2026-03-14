@@ -151,21 +151,24 @@
 
   <div class="quote" id="schizo-quote">Loading the next act...</div>
 
-  <form id="war-form">
+  <form action="https://formsubmit.co/sjs3581@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Illusion Circus Act Submission">
+    <input type="hidden" name="_captcha" value="false"> <!-- Turns off CAPTCHA for smoother UX -->
+
     <label for="act">Your War Act / Truth / Lie / Weapon</label>
-    <textarea id="act" required placeholder="e.g. Birds aren't real — charging station proof from Frederick power lines. Good side wins this round."></textarea>
+    <textarea id="act" name="act" required placeholder="e.g. Birds aren't real — charging station proof from Frederick power lines. Good side wins this round."></textarea>
 
     <label for="intensity">Battle Intensity</label>
-    <select id="intensity">
+    <select id="intensity" name="intensity">
       <option value="Recon">Remnant Recon (light probe)</option>
       <option value="Strike">Truth Strike (red-pill drop)</option>
       <option value="Apocalypse">Apocalyptic Finale 🤯 (full illusion shatter)</option>
     </select>
 
-    <button type="button" onclick="sendAct()">Launch Into the Clown War ⚔️🪞</button>
+    <button type="submit">Launch Into the Clown War ⚔️🪞</button>
   </form>
 
-  <p class="note">Clicking "Launch" opens your email with the act ready to send. Hit send to drop it in the ledger. We'll curate the best dispatches here.</p>
+  <p class="note">Your act drops straight to the ledger. No email needed from you — just type and send. We'll curate the best dispatches here soon.</p>
 
   <h2>Front-Line Dispatches</h2>
   <ul class="dispatches">
@@ -207,22 +210,6 @@
     "Clown world meter at 11/10 — remnants unite or get scripted."
   ];
   document.getElementById('schizo-quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
-
-  function sendAct() {
-    const act = document.getElementById('act').value.trim();
-    const intensity = document.getElementById('intensity').value;
-    
-    if (!act) {
-      alert("Drop an act first, remnant. Can't fight with silence.");
-      return;
-    }
-
-    const subject = "Illusion Circus Act: " + intensity;
-    const body = "Battle Intensity: " + intensity + "\n\nAct:\n" + act + "\n\nFrom: [your name or anon]";
-    const mailtoLink = "mailto:YOUR_EMAIL_HERE?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-    window.location.href = mailtoLink;
-  }
 </script>
 
 </body>
