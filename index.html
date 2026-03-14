@@ -3,136 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Illusion Circus: Good vs Evil Edition</title>
+  <title>Illusion Circus – Good vs Evil</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
-    body { 
-      background: #0a0a0a; 
-      color: #e0e0e0; 
-      font-family: 'Inter', sans-serif; 
-      margin: 0; 
-      line-height: 1.6; 
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      background: #0b0b0b;
+      color: #e8e8e8;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
     }
-    h1, h2 { 
-      font-family: 'Playfair Display', serif; 
-      color: #c41e3a; 
-      text-shadow: 0 0 15px rgba(196,30,58,0.5); 
-      letter-spacing: 1.5px; 
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    .stage-border { 
-      border: 2px solid rgba(212,175,55,0.3); 
-      border-radius: 8px; 
-      padding: 25px; 
-      background: rgba(28,28,28,0.7); 
-      box-shadow: inset 0 0 30px rgba(196,30,58,0.15); 
-      margin: 40px 0; 
+    h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: #d32f2f;
+      margin: 0 0 0.4em;
+      text-align: center;
     }
-    .card { 
-      background: #1c1c1c; 
-      padding: 20px; 
-      margin: 15px 0; 
-      border-radius: 8px; 
-      border-left: 5px solid #c41e3a; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6); 
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #ffca28;
+      margin: 3em 0 1em;
+      text-align: center;
     }
-    .highlight { color: #d4af37; font-weight: 600; }
+    .tagline {
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: #ffca28;
+      text-align: center;
+      margin: 0.5em 0 2em;
+    }
+    .subtitle {
+      font-size: 1.35rem;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3em;
+      color: #bbbbbb;
+    }
+    .quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #ffca28;
+      text-align: center;
+      margin: 3em 0;
+      padding: 0 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    form {
+      background: #111;
+      padding: 40px;
+      border-radius: 8px;
+      margin: 3em auto;
+      max-width: 700px;
+      border: 1px solid #333;
+    }
+    label {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.8em;
+      color: #ffca28;
+    }
+    textarea, select {
+      width: 100%;
+      padding: 14px;
+      background: #1a1a1a;
+      color: #e8e8e8;
+      border: 1px solid #444;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      margin-bottom: 1.8em;
+      resize: vertical;
+      min-height: 140px;
+    }
+    button {
+      background: #d32f2f;
+      color: white;
+      border: none;
+      padding: 18px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #b71c1c;
+    }
+    ul.dispatches {
+      list-style: none;
+      padding: 0;
+    }
+    ul.dispatches li {
+      background: #111;
+      padding: 18px;
+      margin: 1.2em 0;
+      border-left: 4px solid #d32f2f;
+      border-radius: 4px;
+    }
+    .tags {
+      text-align: center;
+      margin: 4em 0;
+    }
+    .tag {
+      background: #1a1a1a;
+      color: #ffca28;
+      padding: 8px 18px;
+      margin: 6px;
+      border-radius: 30px;
+      font-size: 1rem;
+      border: 1px solid #444;
+      display: inline-block;
+    }
+    .score {
+      text-align: center;
+      font-size: 1.4rem;
+      margin: 4em 0;
+      padding: 30px;
+      background: #111;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
   </style>
 </head>
 <body>
 
-<div style="text-align:center; padding:80px 20px 60px; background:linear-gradient(to bottom, #0a0a0a, #111); position:relative; overflow:hidden; border-bottom:6px solid #c41e3a;">
-  <!-- Subtle curtain/smoke overlay -->
-  <div style="position:absolute; inset:0; background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.8) 100%); pointer-events:none;"></div>
-  
-  <h1 style="font-size:4.5em; margin:0; z-index:2;">Illusion Circus</h1>
-  <h2 style="font-size:2.8em; margin:20px 0; color:#d4af37; z-index:2;">Good vs Evil Edition: It's All Fake and Gay... Or Is It? 🪞⚔️</h2>
-  <p style="font-size:1.5em; max-width:800px; margin:30px auto; z-index:2;">Live from the remnant stage — drop your act in the eternal clown war. Truth remnants vs scripted illusions. Mirrors, smoke, red-pill receipts. Frederick front lines. Whose side are you on tonight?</p>
-  
-  <div id="schizo-quote" style="font-style:italic; font-size:1.8em; color:#d4af37; margin:40px 0; min-height:80px; text-shadow:0 0 12px rgba(212,175,55,0.6);">
-    Loading the next act...
-  </div>
-
-  <!-- Abstract illusion graphics (cinematic placeholders – feel free to swap with your own uploads) -->
-  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:30px; margin:40px 0;">
-    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af5921?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dark empty circus tent with red spotlight" style="max-width:360px; border-radius:8px; box-shadow:0 0 40px rgba(196,30,58,0.4);">
-    <img src="https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cracked mirror reflection in smoke" style="max-width:360px; border-radius:8px; box-shadow:0 0 40px rgba(212,175,55,0.3);">
-  </div>
-
-  <script>
-    const quotes = [
-      "The script says everything is fine. Remnants say: show receipts or get exposed.",
-      "Illusions crack under pressure. Good side keeps hammering.",
-      "Frederick shadows hiding more than streetlights. Time to turn on the spotlight.",
-      "Adrenochrome harvest or elite theater prop? Pick your side.",
-      "The map is gay, the stage is rigged, the audience is waking up.",
-      "Simulation glitch detected. Good remnants logging the error.",
-      "Reptilians in the director's chair? Remnants: cue the expose.",
-      "Clown world meter at 11/10 — remnants unite or get scripted."
-    ];
-    document.getElementById('schizo-quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
-  </script>
-</div>
-
 <div class="container">
-  <form action="https://formspree.io/f/mlgpllzq" method="POST" style="max-width:700px; margin:60px auto; padding:35px; background:#1c1c1c; border-radius:8px; border:2px solid #c41e3a; box-shadow:0 0 30px rgba(196,30,58,0.2);">
-    <input type="hidden" name="_subject" value="NEW ACT IN THE CLOWN WAR!">
+  <h1>Illusion Circus</h1>
+  <div class="tagline">Good vs Evil Edition: It's All Fake and Gay... Or Is It?</div>
+  <p class="subtitle">Live from the remnant stage — drop your act in the eternal clown war.<br>Truth vs scripted illusions. Mirrors, smoke, red-pill receipts.<br>Frederick front lines. Whose side are you on tonight?</p>
+
+  <div class="quote" id="schizo-quote">Loading the next act...</div>
+
+  <form action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
+    <input type="hidden" name="_subject" value="NEW ACT IN THE CLOWN WAR">
     <input type="hidden" name="_next" value="https://remnantoftheway.github.io/illusioncircus/?thanks=1">
-    <input type="text" name="_gotcha" style="display:none;" />
+    <input type="text" name="_gotcha" style="display:none;">
 
-    <label for="act" style="font-size:1.4em; display:block; margin-bottom:12px; font-weight:600;">Your War Act / Truth Bomb / Lie / Weapon:</label>
-    <textarea id="act" name="act" rows="6" style="width:100%; padding:15px; background:#111; color:#e0e0e0; border:1px solid #d4af37; border-radius:6px; font-size:1.1em;" required placeholder="e.g. Birds aren't real — charging station proof from Frederick power lines. Good side wins this round."></textarea><br><br>
+    <label for="act">Your War Act / Truth / Lie / Weapon</label>
+    <textarea id="act" name="act" required placeholder="e.g. Birds aren't real — charging station proof from Frederick power lines. Good side wins this round."></textarea>
 
-    <label style="font-size:1.3em; display:block; margin-bottom:12px; font-weight:600;">Battle Intensity:</label>
-    <select name="intensity" style="width:100%; padding:14px; background:#111; color:#e0e0e0; border:1px solid #c41e3a; border-radius:6px; font-size:1.1em;">
+    <label for="intensity">Battle Intensity</label>
+    <select id="intensity" name="intensity">
       <option value="Recon">Remnant Recon (light probe)</option>
       <option value="Strike">Truth Strike (red-pill drop)</option>
       <option value="Apocalypse">Apocalyptic Finale 🤯 (full illusion shatter)</option>
-    </select><br><br>
+    </select>
 
-    <button type="submit" style="background:#c41e3a; color:white; padding:18px; border:none; border-radius:6px; font-size:1.5em; cursor:pointer; width:100%; font-weight:600;">Launch Into the Clown War ⚔️🪞</button>
+    <button type="submit">Launch Into the Clown War ⚔️🪞</button>
   </form>
 
-  <script>
-    if (window.location.search.includes('thanks=1')) {
-      alert("Act logged in the war ledger. Thanks for swinging for the good side — or playing evil for the lulz. Refresh for the next skirmish.");
-    }
-  </script>
+  <h2>Front-Line Dispatches</h2>
+  <ul class="dispatches">
+    <li><strong>Evil Exposure:</strong> Birds recharging for reset? Frederick remnants spotted the pattern. (Apocalyptic Finale)</li>
+    <li><strong>Truth Strike:</strong> Moon psyop layers peeling back. Good side gaining ground.</li>
+    <li><strong>Remnant Recon:</strong> Frederick shadows hiding more than meets the eye. Spotlight incoming.</li>
+  </ul>
 
-  <h2 style="text-align:center; margin:80px 0 30px; font-size:2.8em;">Front-Line Dispatches</h2>
-  <div class="stage-border">
-    <div class="card">
-      <span class="highlight">Evil Exposure:</span> Birds recharging for reset? Frederick remnants spotted the pattern. (Apocalyptic Finale)
-    </div>
-    <div class="card">
-      <span class="highlight">Truth Strike:</span> Moon psyop layers peeling back. Good side gaining ground.
-    </div>
-    <div class="card">
-      <span class="highlight">Remnant Recon:</span> Frederick shadows hiding more than meets the eye. Spotlight incoming.
-    </div>
-    <!-- Add more cards as acts come in via email -->
+  <h2>Battle Terms</h2>
+  <div class="tags">
+    <span class="tag">glowie</span>
+    <span class="tag">adrenochrome</span>
+    <span class="tag">Tartaria</span>
+    <span class="tag">Mandela</span>
+    <span class="tag">Nibiru</span>
+    <span class="tag">simulation</span>
+    <span class="tag">reptilian</span>
+    <span class="tag">flat earth</span>
+    <span class="tag">birds drone</span>
+    <span class="tag">clown war</span>
   </div>
 
-  <h2 style="text-align:center; margin:80px 0 30px; font-size:2.8em;">Battle Terms</h2>
-  <div class="stage-border" style="text-align:center;">
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">glowie</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">adrenochrome</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">Tartaria</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">Mandela</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">Nibiru</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">simulation</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">reptilian</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">flat earth</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">birds drone</span>
-    <span style="background:#2a2a2a; color:#d4af37; padding:10px 20px; margin:8px; border-radius:30px; border:1px solid #c41e3a; display:inline-block;">clown war</span>
-  </div>
-
-  <h2 style="text-align:center; margin:80px 0 30px; font-size:2.8em;">Moon Psyop War Score</h2>
-  <div class="stage-border" style="text-align:center; font-size:1.4em;">
-    Remnants: 48% | Script-Writers: 28% | Layers Debate: 24% (seeds — real war updates incoming)
+  <div class="score">
+    <strong>Moon Psyop War Score</strong><br>
+    Remnants: 48% | Script-Writers: 28% | Layers Debate: 24%<br>
+    (seeds — real updates incoming)
   </div>
 </div>
 
+<script>
+  const quotes = [
+    "The script says everything is fine. Remnants say: show receipts or get exposed.",
+    "Illusions crack under pressure. Good side keeps hammering.",
+    "Frederick shadows hiding more than streetlights. Time to turn on the spotlight.",
+    "Adrenochrome harvest or elite theater prop? Pick your side.",
+    "The map is gay, the stage is rigged, the audience is waking up.",
+    "Simulation glitch detected. Good remnants logging the error.",
+    "Reptilians in the director's chair? Remnants: cue the expose.",
+    "Clown world meter at 11/10 — remnants unite or get scripted."
+  ];
+  document.getElementById('schizo-quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+
+  if (window.location.search.includes('thanks=1')) {
+    alert("Act logged in the war ledger. Thanks for swinging for the good side — or playing evil for the lulz. Refresh for the next skirmish.");
+  }
+</script>
+
 </body>
 </html>
-
